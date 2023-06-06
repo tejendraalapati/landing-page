@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Contact Us</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+<style>
+body{
+    background-image:url('/static/images/background.png');
+}
+.bubbles img{
+        width: 50px;
+        animation: bubble 7s linear infinite;
+    }
+    .bubbles {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        bottom: -70px;
+    }
+    @keyframes bubble {
+        0%{
+            transform: translateY(0);
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        70%{
+            opacity: 1;
+        }
+        100%{
+            transform: translateY(-80vh);
+            opacity: 0;
+        }
+    }
+    .bubbles img:nth-child(1){
+        animation-delay: 2s;
+        width: 25px;
+    }
+    .bubbles img:nth-child(2){
+        animation-delay: 1s;
+    }
+    .bubbles img:nth-child(3){
+        animation-delay: 3s;
+        width: 25px;
+    }
+    .bubbles img:nth-child(4){
+        animation-delay: 4.5s;
+    }
+    .bubbles img:nth-child(5){
+        animation-delay: 3s;
+    }
+    .bubbles img:nth-child(6){
+        animation-delay: 2s;
+        width: 20px;
+    }
+    .bubbles img:nth-child(7){
+        animation-delay: 2s;
+        width: 35px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <center>
+    <form method="post">
+        <h3>Contact Us</h3>
+        {% csrf_token %} 
+        <table>
+            <tr>
+                <td>
+        <label for="Name">Name:</label></td>
+        <td>
+        <input type="text" placeholder="Name" id="username" name="Name"></td>
+        </tr>
+        <tr>
+            <td>
+        <label for="Email">Email:</label></td>
+        <td>
+        <input type="text" placeholder="Email" id="Email" name="Email">
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <label for="Phone">Phone Number:</label></td>
+        <td>
+        <input type="text" placeholder="Phone" id="Phone" name="phone"></td>
+        </tr>
+    <tr>
+        <td>
+        <label for="Message">message:</label></td>
+        <td>
+        <textarea name="message"></textarea></td></tr>
+        </table>
+
+        <button type="submit">Submit</button>
+        <!-- <input type="button" value=""> -->
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+    </form>
+    </center>
+    <div class="bubbles">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+        <img src="{% static 'images/bubble.png' %}">
+    </div>
+</body>
+</html>
